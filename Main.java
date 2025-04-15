@@ -1,11 +1,9 @@
-// Student Name
-// Period X
+// Charanpreet Kaur
+// Period 4
 // Text Excel Project
-
 
 import java.io.*;
 import java.util.*;
-
 
 /*
  * This class, Main, is the main implementation of the TextExcel program. It
@@ -15,21 +13,14 @@ import java.util.*;
  * file.
  */
 public class Main extends ExcelBase {
-
-
     public static void main(String args[]) {
-
-
         // Create our Grid object and assign it to the GridBase
         // static field so that we can reference it later on.
         GridBase.grid = new Grid();
         Main engine = new Main();
-
-
         engine.runInputLoop();
     }
-
-
+    
     /*
      * This method will parse a line that contains a command. It will delegate the
      * command to the Grid if the Grid should handle it. It will call the
@@ -56,14 +47,10 @@ public class Main extends ExcelBase {
      */
     public String processCommand(String command) {
         String result = null;
-
-
-        // TODO: handle help command here...
-
-
-        // TODO: handle all file related commands here...
-
-
+        if (command.equals("help")) {
+            result = "Input commands specific to operations on excel spreadsheet.\nExamples: display, value, expr, clear, etc.";
+        }
+        
         // Dispatch the command to the Grid object to see if it can handle it.
         if (result == null && GridBase.grid != null) {
             // The GridBase class has a static field, grid, of type GridBase.
